@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/bullet.png" type="Texture" id=2]
+
+[node name="Bullet" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 5
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1.87678, -1.71904, 1.82087, -1.71904, 1.82087, 1.72793, -1.75143, 1.72793 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]
+
+
