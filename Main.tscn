@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://DefaultTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Zombo.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node" index="0"]
 
@@ -31,5 +32,20 @@ _sections_unfolded = [ "Cell", "Collision" ]
 position = Vector2( 384, 192 )
 collision_layer = 2
 collision_mask = 5
+
+[node name="Zombo" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 768, 128 )
+hits = 3
+
+[node name="Zombo2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 768, 320 )
+hits = 3
+
+[node name="Zombo3" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 64, -64 )
+hits = 3
 
 

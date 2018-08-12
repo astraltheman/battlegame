@@ -143,4 +143,31 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
+[node name="BitTimer" type="Timer" parent="." index="4"]
+
+process_mode = 0
+wait_time = 0.2
+one_shot = false
+autostart = false
+
+[node name="SlideTimer" type="Timer" parent="." index="5"]
+
+process_mode = 0
+wait_time = 0.25
+one_shot = false
+autostart = false
+
+[node name="ShootTimer" type="Timer" parent="." index="6"]
+
+process_mode = 0
+wait_time = 0.3
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="BitTimer" to="." method="_on_BitTimer_timeout"]
+
+[connection signal="timeout" from="SlideTimer" to="." method="_on_SlideTimer_timeout"]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+
 
